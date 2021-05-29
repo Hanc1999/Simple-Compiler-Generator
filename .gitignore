@@ -1,3 +1,7 @@
-# test here in the first commit
-test.txt
+# ignore all exec
+*.out
 
+# ignore all middle results
+*ir.txt
+*mips.txt
+*sout.txt
