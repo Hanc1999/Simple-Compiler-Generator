@@ -1,0 +1,56 @@
+move $sp $fp
+addi $sp $sp 4
+sw $zero 0($fp)
+li $t0 10
+sw $t0 0($fp)
+addi $sp $sp 4
+sw $zero 4($fp)
+li $t0 2
+sw $t0 4($fp)
+label_0 :
+li $t0 0
+addi $sp $sp 4
+sw $zero 8($fp)
+sw $t0 8($fp)
+lw $t0 0($fp)
+lw $t1 8($fp)
+sub $t0 $t0 $t1
+slt $t0 $t0 $zero
+nor $t0 $t0 $zero
+addi $sp $sp 4
+sw $zero 12($fp)
+sw $t0 12($fp)
+lw $t0 12($fp)
+bne $t0 $zero label_1
+j label_2
+label_1 :
+lw $t0 0($fp)
+lw $t1 4($fp)
+sub $t0 $t0 $t1
+addi $sp $sp 4
+sw $zero 16($fp)
+sw $t0 16($fp)
+lw $t0 16($fp)
+sw $t0 0($fp)
+lw $t0 0($fp)
+li $v0 1
+move $a0 $t0
+syscall
+li $t0 2
+addi $sp $sp 4
+sw $zero 20($fp)
+sw $t0 20($fp)
+lw $t0 4($fp)
+lw $t1 20($fp)
+sllv $t0 $t0 $t1
+addi $sp $sp 4
+sw $zero 24($fp)
+sw $t0 24($fp)
+lw $t0 24($fp)
+sw $t0 4($fp)
+lw $t0 4($fp)
+li $v0 1
+move $a0 $t0
+syscall
+j label_0
+label_2 :

@@ -1,0 +1,5 @@
+int a;
+a = 1 + 2; 
+if(a == 3 || a >= 4){a = 5;}
+else{a = a + 3;}
+return;

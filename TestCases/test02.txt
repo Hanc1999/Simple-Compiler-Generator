@@ -1,0 +1,8 @@
+int intaa=10, bb=2;
+while (intaa >= 0){
+ intaa = intaa - bb;
+ printf(intaa);
+ bb = bb << 2;
+ printf(bb);
+}
+return;
